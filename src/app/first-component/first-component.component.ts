@@ -13,7 +13,8 @@ interface users{
 
 export class FirstComponentComponent implements OnInit {
   i = 0;
-  persondata ;
+  inputData = "" 
+  persondata = [];
   someVariable = Math.random();
   constructor(private re : RecondsService) { }
   ngOnInit(): void {
