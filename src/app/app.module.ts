@@ -8,13 +8,17 @@ import { FirstComponentComponent } from './first-component/first-component.compo
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { DataComponent } from './data/data.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     HomeComponent,
-    DataComponent
+    DataComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
