@@ -13,16 +13,11 @@ interface users{
 
 export class FirstComponentComponent implements OnInit {
   i = 0;
-  inputData = "" 
-  persondata = [];
+  inputData = ""
   someVariable = Math.random();
   constructor(private re : RecondsService) { }
   ngOnInit(): void {
 
-    this.re.getData().subscribe(data => {
-      console.log(data)
-      this.persondata = Array.from(Object.keys(data), k=>data[k]);
-    })
     // like when we add a time interval function it will call it so many times
     // if any variable is changed
     // uncomment the following code to see effect
