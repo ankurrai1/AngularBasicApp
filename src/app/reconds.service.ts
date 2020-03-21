@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RecondsService {
-
-  private apiurl = "http://jsonplaceholder.typicode.com/users";
+  // "http://jsonplaceholder.typicode.com
+  private apiurl = "users";
 
   constructor(private http : HttpClient) { }
 
