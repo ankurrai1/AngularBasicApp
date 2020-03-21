@@ -1,19 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { RecondsService } from "../reconds.service";
+
+interface users{
+
+}
 
 @Component({
   selector: 'app-first-component',
   templateUrl: './first-component.component.html',
   styleUrls: ['./first-component.component.css']
 })
+
 export class FirstComponentComponent implements OnInit {
   i = 0;
+  persondata ;
   someVariable = Math.random();
-  constructor() { }
+  constructor(private re : RecondsService) { }
   ngOnInit(): void {
+
+    this.re.getData().subscribe(data => {
+      console.log(data)
+      this.persondata = Array.from(Object.keys(data), k=>data[k]);
+    })
     // like when we add a time interval function it will call it so many times
     // if any variable is changed
     // uncomment the following code to see effect
-  
+
     // setInterval(() => {
     //   this.someVariable = Math.random();
     // }, 1000);
