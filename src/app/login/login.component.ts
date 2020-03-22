@@ -11,5 +11,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  doLogin(e){
+    e.preventDefault();
+    console.log("username is :", e.target.username.value);
+    console.log("username is :",e.target.password.value);
+  }
 }

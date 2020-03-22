@@ -15,14 +15,14 @@ const routes: Routes = [
   {
     path:"data",
     component:DataComponent
-  }
+  },
   {
     path:"login",
-    component:HomeComponent
+    component:LoginComponent
   },
   {
     path:"admin",
-    component:DataComponent
+    component:AdminComponent
   }
 ];
 
