@@ -6,6 +6,8 @@ import { DataComponent } from './data/data.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 
+import { AuthGuard } from "./auth.guard";
+
 
 const routes: Routes = [
   {
@@ -22,7 +24,8 @@ const routes: Routes = [
   },
   {
     path:"admin",
-    component:AdminComponent
+    component:AdminComponent,
+    canActivate:[AuthGuard]
   }
 ];
 
