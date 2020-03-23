@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     this.auth.getUserDetails(username, password).subscribe(data=>{
       if(data.success){
         this.router.navigate(['admin'])
+        this.auth.setLoggedIn(true)
       }
       else{
         window.alert(data.message)
