@@ -22,16 +22,28 @@ app.post("/api/login",async (req,res)=>{
   const {username, password} = req.body;
   const result = await User.findOne({username,password})
   if(!result){
-    res.send("wrong user credential");
+    res.json({
+      success:false,
+      message: "incorrect details for login"
+    });
   }
   else{
-    // we will create session for user here
-    //
+    res.json({
+      success:true,
+      message: "you are logged in"
+    });
   }
 })
 
 app.post('/api/register',async (req,res)=>{
   const {username,password} = req.body;
+  const existing = await User.findOne({username})
+  if(existing) {
+    res.json({
+      success:false,
+      message:"User already exist"
+    })
+  }
   const user = new User({
     username,
     password
