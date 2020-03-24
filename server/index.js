@@ -3,7 +3,7 @@ const parser = require('body-parser');
 const mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodbUri")
+mongoose.connect("mongodb://localhost:27017/angularDB")
 
 const app = express();
 const port = 8000;
@@ -20,7 +20,14 @@ app.get('/',(req,res)=>{
 
 app.post("/api/login",async (req,res)=>{
   const {username, password} = req.body;
-
+  const result = await User.findOne({username,password})
+  if(!res){
+    res.send("wrong user credential");
+  }
+  else{
+    // we will create session for user here
+    //
+  }
 })
 
 app.post('/api/register',(req,res)=>{
