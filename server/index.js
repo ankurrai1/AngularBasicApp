@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
 app.post("/api/login",async (req,res)=>{
   const {username, password} = req.body;
   const result = await User.findOne({username,password})
-  if(!res){
+  if(!result){
     res.send("wrong user credential");
   }
   else{
@@ -30,9 +30,14 @@ app.post("/api/login",async (req,res)=>{
   }
 })
 
-app.post('/api/register',(req,res)=>{
+app.post('/api/register',async (req,res)=>{
   const {username,password} = req.body;
-  user
+  const user = new User({
+    username,
+    password
+  })
+  const result = await user.save();
+  res.json(result);
 })
 
 
