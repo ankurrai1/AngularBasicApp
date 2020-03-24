@@ -1,6 +1,9 @@
 const express = require('express');
 const parser = require('body-parser');
+const mongoose = require('mongoose');
 
+mongoose.Promise = Promise;
+mongoose.connect("mongodbUri")
 
 const app = express();
 const port = 8000;
@@ -14,6 +17,7 @@ app.get('/',(req,res)=>{
 
 app.post('/api/register',(req,res)=>{
   const {username,password} = req.body;
+  user
 })
 
 
