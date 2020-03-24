@@ -3,7 +3,7 @@ const parser = require('body-parser');
 
 
 const app = express();
-const port = 1234;
+const port = 8000;
 
 
 app.use(parser.json());
@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/api/register',(req,res)=>{
-  console.log(req.body);
+  const {username,password} = req.body;
 })
 
 
