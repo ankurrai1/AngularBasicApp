@@ -20,6 +20,7 @@ app.use(session({
 app.use(parser.json());
 
 app.get('/',(req,res)=>{
+  console.log(req.headers)
   res.send("I am listening");
 })
 
@@ -29,6 +30,12 @@ app.get('/api/logout',(req,res)=>{
   req.session.destroy()
   res.json({
     success: true
+  })
+})
+
+app.get('/api/isLoggedIn',(req,res)=>{
+  res.json({
+    status: !!req.session.user
   })
 })
 
