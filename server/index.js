@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const parser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -10,7 +11,11 @@ const port = 8000;
 
 const User = require('./schema/user');
 
-
+app.use(session({
+  secret : "ankurraiItcouldbeanyStringlikecontain1234noaswell",
+  saveUninitialized :false,
+  resave: false
+}))
 
 app.use(parser.json());
 
@@ -28,6 +33,8 @@ app.post("/api/login",async (req,res)=>{
     });
   }
   else{
+    req.session.user = username;
+    req.session.save();
     res.json({
       success:true,
       message: "you are logged in"
