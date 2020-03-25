@@ -33,9 +33,27 @@ app.get('/api/logout',(req,res)=>{
   })
 })
 
+app.post('api/quote',async(req, res)=>{
+  const user = await User.findOne({
+    username : req.session.username
+  })
+  if(!user) {
+    res.json({
+      success : false,
+      message: "user not found"
+    })
+    return ;
+  }
+  await user.update({username : req.session.user},{$set: {quote:req.body.value}})
+  res.json({
+    success :true,
+    message:"your quote is updated successfully"
+  })
+})
+
 app.get('/api/isLoggedIn',(req,res)=>{
   res.json({
-    status: !!req.session.user
+    status: !!req.session.user // !! is used to convert value into boolean
   })
 })
 
