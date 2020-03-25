@@ -24,8 +24,9 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/api/logout',(req,res)=>{
-  req.session.username = undefined;
-  req.session.save()
+  // req.session.username = undefined;
+  // req.session.save()
+  req.session.destroy()
   res.json({
     success: true
   })
