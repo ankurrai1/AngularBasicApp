@@ -43,6 +43,7 @@ app.post('/api/register',async (req,res)=>{
       success:false,
       message:"User already exist"
     })
+    return;
   }
   const user = new User({
     username,
