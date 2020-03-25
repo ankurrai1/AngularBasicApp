@@ -23,6 +23,14 @@ app.get('/',(req,res)=>{
   res.send("I am listening");
 })
 
+app.get('/api/logout',(req,res)=>{
+  req.session.username = undefined;
+  req.session.save()
+  res.json({
+    success: true
+  })
+})
+
 app.post("/api/login",async (req,res)=>{
   const {username, password} = req.body;
   const result = await User.findOne({username,password})
