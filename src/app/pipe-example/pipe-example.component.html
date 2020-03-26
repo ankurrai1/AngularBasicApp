@@ -30,5 +30,12 @@
        <h1>Slice Pipe</h1>
        <b>{{months | slice:2:6}}</b>
        // here 2 and 6 refers to the start and the end index
+       <br/><br/><br/><br/>
+       <h1>Custom Pipe Example</h1>
+       <div >
+         <h5>{{title | reversepipe:true:"singleQ"}}</h5> // with option true and singleQ to show . and string in ''
+         <h5>{{title | reversepipe:false:"doubleQ"}}</h5> with option false and doubleQ to not show . and string in ""
+       </div>
+
   </div>
 </div>
