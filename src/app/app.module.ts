@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from "./auth.guard";
 import { AuthService } from "./auth.service";
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { ReversepipePipe } from './reversepipe.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PipeExampleComponent } from './pipe-example/pipe-example.component';
     DataComponent,
     LoginComponent,
     AdminComponent,
-    PipeExampleComponent
+    PipeExampleComponent,
+    ReversepipePipe
   ],
   imports: [
     BrowserModule,
