@@ -14,6 +14,7 @@ import { AuthGuard } from "./auth.guard";
 import { AuthService } from "./auth.service";
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { ReversepipePipe } from './reversepipe.pipe';
+import { RedblackDirective } from './redblack.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReversepipePipe } from './reversepipe.pipe';
     LoginComponent,
     AdminComponent,
     PipeExampleComponent,
-    ReversepipePipe
+    ReversepipePipe,
+    RedblackDirective
   ],
   imports: [
     BrowserModule,
