@@ -5,7 +5,14 @@
 <a routerLink = "/admin"> Go to Admin </a>
 
 <h1>Directives</h1>
-<b *ngif ="5>3;else OtherBlockOfContent"> Yes 5 is larger than 3</b>
-<ng-template>
-  <h1>NOO !!</h1>
+<b *ngIf ="SomeVariable; then trueBlock else falseBlock"></b>
+
+<ng-template #falseBlock>
+  <h1> SomeVariable is False</h1>
 </ng-template>
+
+<ng-template #trueBlock>
+  <h1> SomeVariable is True</h1>
+</ng-template>
+
+<button type="button" name="button" (click)="toggelVariable()">Toggel Variable</button>
