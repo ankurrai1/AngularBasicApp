@@ -16,6 +16,7 @@ import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { ReversepipePipe } from './reversepipe.pipe';
 import { RedblackDirective } from './redblack.directive';
 import { HeadersComponent } from './headers/headers.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HeadersComponent } from './headers/headers.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
