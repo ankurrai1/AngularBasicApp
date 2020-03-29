@@ -1,7 +1,16 @@
-<h1>Login Page</h1>
+<div class="container">
+  <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar></p>
+  <p><ngb-progressbar type="info" [value]="50"></ngb-progressbar></p>
+  <p><ngb-progressbar type="warning" [value]="75"></ngb-progressbar></p>
+  <p><ngb-progressbar type="danger" [value]="100"></ngb-progressbar></p>
+  <p><ngb-progressbar type="primary" [value]="75"></ngb-progressbar></p>
+  <p><ngb-progressbar type="secondary" [value]="50"></ngb-progressbar></p>
+  <p><ngb-progressbar type="dark" [value]="25"></ngb-progressbar></p>
+  <h1>Login Page</h1>
 
-<form (submit)="doLogin($event)">
-  <input type="text" name="username" value="" placeholder="username">
-  <input type="password" name="password" value="" placeholder="password" required>
-  <input type="submit" name="" value="submit">
-</form>
+  <form (submit)="doLogin($event)">
+    <input type="text" name="username" value="" placeholder="username">
+    <input type="password" name="password" value="" placeholder="password" required>
+    <input type="submit" name="" value="submit">
+  </form>
+</div>
