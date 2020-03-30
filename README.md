@@ -9,6 +9,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ***And for starting server with proxy to backend server you can use `npm start`***
 
+### Configure of Proxy server
+> To configure proxy you can goto app root and and open file `proxyconfig.json` you can set your proxy server here and proxy options
+
 ### Backend server 
 `cd server`and then run `npm start`
 
